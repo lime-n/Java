@@ -30,11 +30,11 @@ for(int i = 0; i<test.numInstances();i++) {
      double predicted = c.classifyInstance(test.get(i));
      
      if(predicted == 0.0) {
-     	System.out.println("Loss" + "\t"+trueClassLabel);
+     	System.out.println("Predicted Values:"+"\t"+"Loss" + "\t"+"Original values:"+"\t" +trueClassLabel);
      }else if (predicted == 1.0){
-     	System.out.println("Draw"+ "\t"+trueClassLabel);
+     	System.out.println("Predicted Values:"+"\t"+"Draw"+ "\t"+"Original values:"+"\t" +trueClassLabel);
      }else if(predicted == 2.0) {
-     	System.out.println("Win"+ "\t"+trueClassLabel);
+     	System.out.println("Predicted Values:"+"\t"+"Win"+ "\t"+"Original values:"+"\t" +trueClassLabel);
      	
      }
 	
@@ -72,10 +72,22 @@ for(int i = 0; i<test.numInstances();i++) {
     
    double finalTest = countIns/testIns;
     
-   
+   System.out.println("Value below is the accuracy:");
+
 return finalTest;
      
 }
 
+
+    Instances loadClassificationData(String fullPath) throws Exception {
+		
+    	
+    	
+    	
+    	
+    	return null;
+    	
+    	
+    }
 	
 }
