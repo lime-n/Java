@@ -1,9 +1,13 @@
 package TestLEarning;
 
+import java.io.Reader;
+import java.util.Random;
+
 import weka.classifiers.Classifier;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.core.Instance;
 import weka.core.Instances;
+import weka.core.converters.ConverterUtils.DataSource;
 
 public class plc {
 //set up classifier	
@@ -79,15 +83,54 @@ return finalTest;
 }
 
 
-    Instances loadClassificationData(String fullPath) throws Exception {
-		
-    	
-    	
-    	
-    	
-    	return null;
-    	
-    	
-    }
+	 public static Instances loadData(String location) {
+		    try {
+		      return DataSource.read(location);
+		    }
+		    catch (Exception e) {
+		      System.err.println("Failed to load data from: " + location);
+		      e.printStackTrace();
+		      return null;
+		    }
+		  }
+
+		  public static void main(String[] args) {
+		    String dataLocation = "C:/Users/Emil/Desktop/Machine Learning - Java/Week 1/Arsenal_TRAIN1.arff";
+		    Instances train = loadData(dataLocation);
+		    System.out.println(train);
+		  }
+		  
+Instances[] splitData(Instances all, double proportion) {
+	
+	all.randomize(new java.util.Random(0));	
+	all.setClassIndex(all.numAttributes()-1);
+	
+	Instances[] split=new Instances[2];
+	
+	split[0]=new Instances(all);
+	
+	split[1]=new Instances(all, 0);
+	
+double	trainsize =  proportion*all.numInstances();
+double testsize = all.numInstances() - trainsize;	
+
+
+
+split[1] = new Instances(all, (int)trainsize , (int)testsize);
+
+return split;
+
+
+}
+
+
+double[] classDistribution(Instances data) {
+	
+	
+	
+	return null;
+}
+
+	  
 	
 }
