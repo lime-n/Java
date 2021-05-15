@@ -24,9 +24,15 @@ yourArr[i] = s[0];
 submit = Arrays.copyOfRange(yourArr, 0, i);
 }
 String submitOne = String.join(" ", submit);
+
+System.out.println(submitOne);
+
+
 textSplit splitWords = new textSplit();
-HashMap<String, Integer> finalSubmit =   splitWords.texted(submitOne);
+HashMap<String, Double> finalSubmit =   splitWords.texted(submitOne);
 System.out.println(finalSubmit);
+
+
 }
 	 }
 

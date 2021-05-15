@@ -9,25 +9,26 @@ import java.util.Map;
 public class textSplit {
 
 	
-HashMap<String, Integer> texted(String tex) {
+HashMap<String, Double> texted(String tex) {
 		
 
-        HashMap<String, Integer> counts = new HashMap<String, Integer>();
+        HashMap<String, Double> counts = new HashMap<String, Double>();
 
         for (String word : tex.split(" ")) { // loops through each word of the string
             // text.split(" ") returns an array, with all the parts of the string between your regexes
             // if current word is not already in the map, add it to the map.
 
-            if (!counts.containsKey(word)) counts.put(word, 0);
+            if (!counts.containsKey(word)) counts.put(word, (double) 0);
 
-            counts.put(word, counts.get(word) + 1); // adds one to the count of the current word
+            counts.put(word,counts.get(word) + 1); // adds one to the count of the current word
+
         }
-        // lambda expression
-        counts.forEach((string, integer) -> System.out.printf("amount of \"%s\": %d\n", string, integer));
-    
-		
-		return counts;
+return counts;
 	}
+
+
+
+
 /**
 HashMap<String, Integer> splitWords(String words) {
 
@@ -79,6 +80,18 @@ public static String transpose(String s) {
 
 
 
-
+int[] numSplit(String numberSplit) {
+	
+	 final var words = numberSplit.split( " " );
+	    final Map<String,Integer> registry = new HashMap<>();
+	    final var result = new int [words.length];
+	    for( var i = 0; i < words.length; ++i )
+	    {
+	      result [i] = registry.computeIfAbsent( words [i], $ -> registry.size() + 1 );
+	    }
+		return result;
+	  }
 
 }
+
+

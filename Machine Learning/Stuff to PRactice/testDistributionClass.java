@@ -2,9 +2,12 @@ package TestLEarning;
 
 
 import java.util.ArrayList;
+
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import weka.classifiers.Classifier;
 import weka.classifiers.bayes.NaiveBayes;
@@ -12,7 +15,9 @@ import weka.core.Instances;
 
 public class testDistributionClass {
 	
-
+    
+  
+	
 
 	 public static void main(String[] args) throws Exception {
 
@@ -142,19 +147,49 @@ StringBuilder sb = new StringBuilder();
 
 //System.out.println(Arrays.toString(ttt));
 
-String element;
+//int[] nlist;
 
+
+//String element;
+
+//String testArray;
+
+//List<List<String>> output = new ArrayList<List<String>>();
+
+String[] yourArr = new String[test.numInstances()];
+String[] submit = null;
 	    for(int i = 0; i<test.numInstances();i++) {
 	    		String  trueClassLabel = test.instance(i).toString(test.classIndex());
 	    		s = new String[] {trueClassLabel};
-	    		
+
 	    		list.add(trueClassLabel);
 	    		//element = list.get(list.size()-1);
 	    		
-	    		String[] stringArray = list.toArray(new String[0]);
+	    		//String[] stringArray = list.toArray(new String[0]);
 	    		
-	    		List<String> testList = list.subList(list.size()-1, list.size());
+	    		//List<String> testList = list.subList(list.size()-1, list.size());
 	    		
+	    		//list.add(s);
+	    	
+	    	//testArray=	Arrays.toString(list.get(i).strip().split(" "));
+	    	
+	    	//List<String>List = ArrayToListConversion(s);
+	    	
+	    	//System.out.println(List);
+	    	
+	    	//for(String b : yourArr) {
+	    	///	yourArr[i] = s[i];
+	    	//	b++;
+	    	//}
+	    	yourArr[i] = s[0];
+	    	
+	    	 submit = Arrays.copyOfRange(yourArr, 0, i);
+	   
+	    	//System.out.println(Arrays.toString(submit.toString()));
+
+	    		//System.out.println(testArray);
+
+	    		//List<String[]> testList = list.subList(list.size()-1, list.size());
 	    		
 	    		//element = stringArray.get(stringArray()-1);
 	    		/**
@@ -163,17 +198,25 @@ String element;
 	    			sb.append("\t");
 	    		}
 	    		*/
-	    		
-	    		System.out.println(testList);
 	    	
-	        	}
-   
+	    }
+	    
+	    String submitOne = String.join(" ", submit);
+	    textSplit splitWords = new textSplit();
+	    HashMap<String, Integer> finalSubmit =   splitWords.texted(submitOne);
+    	System.out.println(finalSubmit);
 
-	    	}    	
-
-	    	
+    		   
+	    
+	  
+	    
 	    
 	
+	    
+	    
+	    	}
 }
+
+
 	 
 
