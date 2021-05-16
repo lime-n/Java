@@ -53,6 +53,22 @@ public class confusionMatrix {
 	}
 	
 		
+	int[] getClassValues(Instances data) {
+		
+		int test;
+		int[] vest=null;
+		int[] storeVest = new int[data.numInstances()];
+		int[] finalStore = null;
+		  for(int i = 0; i < data.numInstances(); i++) {
+			  test = (int) data.instance(i).classValue();
+              vest = new int[]{test};
+              storeVest[i] = vest[0];
+              finalStore = Arrays.copyOfRange(storeVest, 0, i);
+	}return finalStore;
+	
+	}
+	
+	
 	
 	/**
 	public static void main(String[] args) {
@@ -95,6 +111,6 @@ public class confusionMatrix {
 		
 		//System.out.println("\t"+ "Actual = 0:"+"\t"+"Actual = 1:"+"\n" + "Predic = 0:" + "\t" + counts + "\t" + counts2 + "\n" + "Predic = 1:" + "\t" + counts3 + "\t" + counts1);
 */
-	}
+	
 
-
+}
