@@ -126,9 +126,12 @@ return split;
 
 double[] classDistribution(Instances data) {
 	
+
+    double[] d = new double[data.numClasses()];
+    for(Instance ins:data) d[(int)ins.classValue()]++;
+    
 	
-	
-	return null;
+	return d;
 }
 
 	  
