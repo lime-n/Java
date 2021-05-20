@@ -6,8 +6,6 @@ Parsons, D. 2020. Foundational Java: Key elements and practical programming. Spr
 
 This folder will contain complete solutions to all of these exercises (PENDING)
 
-The folder `Programming` contains the exercises to lab materials from the moduling `Programming II` from the University of East Anglia.
-
 As for the next folder, `Java Machine Learning`. These contain the solutions to the workshops for the
 module Machine Learning at the University of East Anglia. A third year computer science module.
 
